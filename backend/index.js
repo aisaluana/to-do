@@ -21,6 +21,12 @@ app.post('/todo', (req, res) => {
   res.send('ok');
 })
 
+app.delete('/todo/:id', (req, res) => {
+  const id = req.params.id;
+  todoList.splice(id);
+  res.send('ok');
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
